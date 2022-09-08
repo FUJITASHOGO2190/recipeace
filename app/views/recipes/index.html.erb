@@ -1,11 +1,15 @@
+<header>
+  <%= render 'header' %>
+</header>
+
 <div class="container mt-5" >
  <div class="row">
   <div class="cal-3">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" style="background-color: rgb(255, 214, 51)" >
       新規投稿
     </button>
   </div>
-  <div class="cal-9 recipes">
+  <div class="cal-6 offset-1 recipes">
     <%= render 'recipes', recipes: @recipes %>
   </div>
  </div>
@@ -18,9 +22,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">新規投稿</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+       
       </div>
       <%= form_with model: @recipe, local: false do |f| %>
         <div class="modal-body">
