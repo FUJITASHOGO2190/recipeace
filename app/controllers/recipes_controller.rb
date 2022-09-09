@@ -9,6 +9,16 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def edit
+    
+  end
+
+  def destroy
+    recipe = Recipe.find(params[:id])
+    recipe.destroy
+    redirect_to root_path
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(:dish_name, :cook_method)
